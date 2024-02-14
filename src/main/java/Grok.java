@@ -9,5 +9,29 @@
  */
 public class Grok
 {
-    // implement this class per instructions in Required Activities.
+    private static final int DEFAULT_POWER_LEVEL = 50;
+    private int powerLevel;
+    public Grok()
+    {
+        setPowerLevel(DEFAULT_POWER_LEVEL);
+    }
+
+    public Grok(int powerLevel){
+        setPowerLevel(powerLevel);
+    }
+
+    public int getPowerLevel(){
+        return powerLevel;
+    }
+
+    public void setPowerLevel(int powerLevel){
+        this.powerLevel = powerLevel;
+    }
+    public void takePowerPill(PowerPill PowerPill)
+    {
+        setPowerLevel(powerLevel+PowerPill.getPower());
+    }
+    public void tookHit(){
+        setPowerLevel(powerLevel-5);
+    }
 }
